@@ -6,3 +6,4 @@ writing a c program
 using printf
 finding type sizes
 intel syntax
+redirecting to stderr
