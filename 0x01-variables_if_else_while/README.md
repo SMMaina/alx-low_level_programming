@@ -6,3 +6,4 @@ omitting some letters
 printing numbers
 printing using putchar
 printing alphabet in reverse
+printing base 16 numbers
