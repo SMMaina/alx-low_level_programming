@@ -10,3 +10,4 @@ printing base 16 numbers
 printing possible combinations
 multiple combinations of digits
 printing combination of three digits
+printing digits from 0-99
