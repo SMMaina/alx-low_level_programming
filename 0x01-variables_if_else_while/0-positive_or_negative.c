@@ -1,11 +1,11 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
 /**
  * main - Entry point
- * Return: always return 0 after success
+ * Return: return 0 always after success
 */
 int main(void)
 {
@@ -17,15 +17,15 @@ int main(void)
 	printf("%d\n", n);
 	if (n > 0)
 	{
-	printf("is positive\n");
+	printf("is positive");
 	}
 	if (n == 0)
 	{
-	printf("is zero\n");
+	printf("is zero");
 	}
 	if (n < 0)
 	{
-	printf("is negative\n");
+	printf("is negative");
 	}
 	return (0);
 }
