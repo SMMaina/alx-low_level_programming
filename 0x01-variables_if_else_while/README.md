@@ -9,3 +9,4 @@ printing alphabet in reverse
 printing base 16 numbers
 printing possible combinations
 multiple combinations of digits
+printing combination of three digits
