@@ -9,7 +9,7 @@ int main(void)
 {
 	int ch;
 	/* print alphabet in lower case */
-for (ch = 'a'; ch <= 'z'; ch++)
+	for (ch = 'a'; ch <= 'z'; ch++)
 		putchar(ch);
 	putchar('\n');
 	/* return which offer 0 if file is correct */
