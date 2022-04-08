@@ -3,3 +3,4 @@ last digit
 printing alphabet
 alphabet in lowercase
 omitting some letters
+printing numbers
