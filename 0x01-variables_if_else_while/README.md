@@ -5,3 +5,4 @@ alphabet in lowercase
 omitting some letters
 printing numbers
 printing using putchar
+printing alphabet in reverse
