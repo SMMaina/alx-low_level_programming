@@ -1,10 +1,11 @@
-#include <main.h>
-/**
- * main - the entry point
- *program that prints putchar followed by new line
- *Return: always return 0 after success
-*/
+#ifndef {MAIN.H}
+#define {MAIN.H}
 
+/**
+ * main- Entry point
+ * printing putchar followed by new line
+ * Return: return 0 always after success
+*/
 int main(void)
 {
 	putchar();
@@ -19,3 +20,4 @@ int main(void)
 
 	return (0);
 }
+#endif
