@@ -8,3 +8,4 @@ getting absolute value of an integer
 printing last digit of a value
 printing hours and miniutes
 printing timetable
+add two numbers
