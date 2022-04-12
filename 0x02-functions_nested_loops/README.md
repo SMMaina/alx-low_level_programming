@@ -14,3 +14,4 @@ printing times table of n
 printing more natural numbers
 printing Fibonacci numbers
 printing fibonacci numbers
+printing first 98 fibonacci numbers
