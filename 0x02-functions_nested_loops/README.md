@@ -10,3 +10,4 @@ printing hours and miniutes
 printing timetable
 add two numbers
 printing natural numbers
+printing times table of n
