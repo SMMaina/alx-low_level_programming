@@ -13,3 +13,4 @@ printing natural numbers
 printing times table of n
 printing more natural numbers
 printing Fibonacci numbers
+printing fibonacci numbers
