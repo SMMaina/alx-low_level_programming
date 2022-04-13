@@ -2,10 +2,9 @@
 #include <stdio.h>
 
 /**
- * main - Entry point for function testing for positive and negative
- * Return: return 0 always if success
+ * main - Entry point for the function
+ * Return: 0 always after success
 */
-
 int main(void)
 {
 	int i;
