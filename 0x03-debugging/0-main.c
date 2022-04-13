@@ -1,4 +1,5 @@
-#include "main.h" #include <stdio.h>
+#include "main.h"
+#include <stdio.h>
 
 /**
  * main - Entry point for function testing for positive and negative
