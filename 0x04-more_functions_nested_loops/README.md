@@ -6,3 +6,4 @@ printing numbers except some
 printing ten times
 drawing a straight line
 printing diagonal line
+printing square
