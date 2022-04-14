@@ -9,3 +9,4 @@ printing diagonal line
 printing square
 printing fuzz buzz
 printing triangle
+printing largest prime factor
