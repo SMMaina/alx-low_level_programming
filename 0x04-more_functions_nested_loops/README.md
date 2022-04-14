@@ -10,3 +10,4 @@ printing square
 printing fuzz buzz
 printing triangle
 printing largest prime factor
+printing an integer
