@@ -4,3 +4,4 @@ multiplying two integers
 printing numbers
 printing numbers except some
 printing ten times
+drawing a straight line
