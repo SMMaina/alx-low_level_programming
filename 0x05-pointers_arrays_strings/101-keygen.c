@@ -8,10 +8,10 @@
 */
 int main(void)
 {
-	int a;
+	int num;
 
 	srand(time(0));
-	a = rand();
-	printf("%i\n", a);
+	num = rand();
+	printf("%i\n", num);
 	return (0);
 }
