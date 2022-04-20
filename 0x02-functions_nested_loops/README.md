@@ -15,3 +15,4 @@ printing more natural numbers
 printing Fibonacci numbers
 printing fibonacci numbers
 printing first 98 fibonacci numbers
+printing every other character on a string
