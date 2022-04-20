@@ -2,8 +2,8 @@
 /**
  * _strcpy - copies function pointed to by src
  * including the terminating null byte
- * @dest: a pointer to destination of the string
- * @src: a pointer to source string to copy from
+ * @dest: A pointer to destination of the string
+ * @src: A pointer to source string to copy from
  * Return: pointer
 */
 
@@ -13,7 +13,7 @@ char *_strcpy(char *dest, char *src)
 
 	while (*src)
 	{
-		*dest = *src;
+		*dest++ = *src++;
 	}
 	return (a);
 }
