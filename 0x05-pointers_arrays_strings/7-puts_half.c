@@ -5,23 +5,20 @@
 */
 void puts_half(char *str)
 {
-	int i = 0, b, c;
+	int i, last;
+
+	i = 0;
 
 	while (str[i] != '\0')
 	{
 		i++;
 	}
-	if (i % 2 == 0)
+
+	last = (i + 1) / 2;
+
+	for (i = last; str[i]; i++)
 	{
-		b = i / 2;
-	}
-	else
-	{
-		b = (i / 2) + 1;
-	}
-	for (c = b; c < 1; c++)
-	{
-		_putchar(str[c]);
+		_putchar(str[i]);
 	}
 	_putchar('\n');
 }
