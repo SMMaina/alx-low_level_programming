@@ -5,3 +5,4 @@ printing string
 printing string in reverse
 printing a reverse string
 printing half a string
+printing elements in a string
