@@ -7,3 +7,4 @@ printing a reverse string
 printing half a string
 printing elements in a string
 copying elements in strings
+generation of random passwords
