@@ -8,3 +8,4 @@ encoding alphabets into values
 encoding using rot13
 printing integer
 printing indexes in magic files
+function that adds two numbers
