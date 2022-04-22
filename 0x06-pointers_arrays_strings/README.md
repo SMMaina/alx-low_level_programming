@@ -7,3 +7,4 @@ capitalizing words on a string
 encoding alphabets into values
 encoding using rot13
 printing integer
+printing indexes in magic files
