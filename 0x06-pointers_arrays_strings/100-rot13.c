@@ -7,17 +7,18 @@
 */
 char *rot13(char *s)
 {
-	int stringcount, rotation;
-	char r1[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',  'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-	char r2[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'};
+	int x, y;
 
-	for (stringcount = 0; s[stringcount] != '\0'; stringcount++)
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (x = 0; s[x] != '\0'; x++)
 	{
-		for (rotation = 0; rotation < 53; rotation++)
+		for (y = 0; input[y] != '\0'; y++)
 		{
-			if (r1[rotation] == s[stringcount])
+			if (s[x] == input[y])
 			{
-				s[stringcount] = r2[rotation];
+				s[x] = output[y];
 				break;
 			}
 		}
