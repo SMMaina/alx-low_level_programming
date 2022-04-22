@@ -5,3 +5,4 @@ comparing two strings
 reversing content of an array of integers
 capitalizing words on a string
 encoding alphabets into values
+encoding using rot13
