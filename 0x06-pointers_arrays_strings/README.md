@@ -9,3 +9,4 @@ encoding using rot13
 printing integer
 printing indexes in magic files
 function that adds two numbers
+printing a buffer
