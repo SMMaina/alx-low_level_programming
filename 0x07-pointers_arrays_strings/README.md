@@ -1,1 +1,1 @@
-using memcet function to allocate memory
+Using memset function
