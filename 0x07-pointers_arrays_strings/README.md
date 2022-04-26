@@ -7,3 +7,4 @@ locating a substring in a mainstring
 printing a 2-d aray
 printing sums of a diagonals in a square matrix
 setting value of pointer to character
+creating a file containing passwords for crackme executable
