@@ -3,3 +3,4 @@ cocatenating two strings
 allocating memory for an array
 function creating an array of integers
 reallocation fo memory using realloc
+program to print two positive numbers
