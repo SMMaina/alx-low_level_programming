@@ -1,5 +1,9 @@
 #ifndef CALC
 #define CALC
+/*
+ * File: 3-calc.h
+ * Author: maina
+ */
 
 #include <stdio.h>
 #include <string.h>
@@ -44,6 +48,7 @@ int op_div(int a, int b);
  * Return: a % b
  */
 int op_mod(int a, int b);
+
 
 int (*get_op_func(char *s))(int, int);
 
