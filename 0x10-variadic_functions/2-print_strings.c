@@ -17,7 +17,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		str = va_arg(word, char*);
 		if (!str)
 		{
-			str = "(null)";
+			str = "(nil)";
 		}
 		if (!separator)
 		{
