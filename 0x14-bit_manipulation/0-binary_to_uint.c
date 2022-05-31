@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * pow - raises b to a
+ * powN - raises b to a
  * @b: base
  * @a: power
  * Return: power of a to b
