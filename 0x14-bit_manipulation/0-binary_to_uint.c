@@ -1,29 +1,58 @@
 #include "main.h"
-
 /**
- * binary_to_uint - converts a binary number to an unsigned int
- * @b: string having the bin number
- * Return: number converted
+ * pow - raises b to a
+ * @b: base
+ * @a: power
+ * Return: power of a to b
+ */
+int powN(int b, int a)
+{
+	int res = 1;
+
+	while (a > 0)
+	{
+		res *= b;
+		a--;
+	}
+	return (res);
+}
+/**
+ * stringlen - string length
+ * @s: string
+ * Return: string length
+ */
+int stringlen(const char *s)
+{
+	int i = 0;
+
+	while (*s)
+	{
+		i++;
+		s++;
+	}
+	return (i);
+}
+/**
+ * binary_to_uint - converts a binary number to an usigned int
+ * @b: input string
+ * Return: result from conversion
  */
 unsigned int binary_to_uint(const char *b)
 {
-
-	unsigned int dec = 0;
-	int count;
+	int pw;
+	int d = 0;
 
 	if (!b)
 		return (0);
-
-	for (count = 0; b[count] != '\0'; count++)
+	pw = stringlen(b) - 1;
+	while (*b)
 	{
-		if (b[count] != '\0' && b[count] != '1')
+		if (*b != '0' && *b != '1')
 			return (0);
+		if (*b == '1')
+			d += powN(2, pw);
+		b++;
+		pw--;
 	}
-	for (count = 0; b[count] != '\0'; count++)
-	{
-		dec *= 2;
-		if (b[count] == '1')
-			dec += 1;
-	}
-	return (dec);
+	return (d);
 }
