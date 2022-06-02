@@ -6,104 +6,105 @@
 #include <stdio.h>
 
 /**
- * check1 - checks for the no of args
- * @argc: no of args\return: void
+ * check1 - checks for correct no of args
+ * @argc: no of args
+ * Return: void
  */
 void check1(int argc)
 {
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file-to\n");
 		exit(97);
 	}
 }
+
 /**
- * check2 - checks that file_from is in existence and is readbale
- * @check: flag for true or falese
+ * check2 - check that file_from exists and can be read
+ * @check: check if true or false
  * @file: file_from name
- * @filed_from: file descriptor of file_from -1
- * @filed_to: file descriptor of file_to -1
+ * @fd_from: file descriptor
+ * @fd_to: file descriptor
  * Return: void
  */
-void check2(ssize_t check, char *file, int filed_from, int filed_to)
+void check2(ssize_t check, char *file, int fd_from, int fd_to)
 {
 	if (check == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: can't read from file %s\n", file);
-		if (filed_from != -1)
-			close(filed_from);
-		if (filed_to != -1)
-			close(filed_to);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
+		if (fd_from != -1)
+			close(fd_from);
+		if (fd_to != -1)
+			close(fd_to);
 		exit(98);
 	}
 }
 /**
- * check3 - checks if file descriptors were well closed
- * @check: flag for true or false
- * @file: filed_to name
- * @filed_from: file descriptor of file_form, -1
- * @filed_to: file descriptor of file_t0
+ * check3 - check that file-to was created and can be written to
+ * @check: check if true or false
+ * @file: file_to name
+ * @fd_from: file descriptor
+ * @fd_to: file descriptor
  * Return: void
  */
-void check3(ssize_t check, char *file, int filed_from, int filed_to)
+void check3(ssize_t check, char *file, int fd_from, int fd_to)
 {
 	if (check == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: can't close filed %s\n", file);
-		if (filed_from != -1)
-			close(filed_from);
-		if (filed_to != -1)
-			close(filed_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+		if (fd_from != -1)
+			close(fd_from);
+		if (fd_to != -1)
+			close(fd_to);
 		exit(99);
 	}
 }
 /**
- * check4 - check  for closure of file descritors
- * @check: check if true or false
- * @filed: file descriptor
+ * check4 - checks that file descriptors were closed properly
+ * @check: checks if true or false
+ * @fd: file descriptor
  * Return: void
  */
-void check4(int check, int filed)
+void check4(int check, int fd)
 {
 	if (check == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: can't close filed %d\n", filed);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
 /**
- * main - func to copy from one file to another
- * @argc: number of args passed
- * @argv: array of ptrs to args
- * Return: 0 on success
+ * main - copies the content of a file
+ * @argc: no of args passed
+ * @argv: array of pointers to the args
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
-	int filed_from, filed_to, close_to, close_from;
-	ssize_t red, wrt;
+	int fd_from, fd_to, close_to, close_from;
+	ssize_t lenr, lenw;
 	char buf[1024];
 	mode_t fileper;
 
 	check1(argc);
-	filed_from = open(argv[1], O_RDONLY);
-	check2((ssize_t)filed_from, argv[1], -1, -1);
+	fd_from = open(argv[1], O_RDONLY);
+	check2((ssize_t)fd_from, argv[1], -1, -1);
 	fileper = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-	filed_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, fileper);
-	check3((ssize_t)filed_to, argv[2], filed_from, -1);
-	red = 1024;
-
-	while (red == 1024)
+	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, fileper);
+	check3((ssize_t)fd_to, argv[2], fd_from, -1);
+	lenr = 1024;
+	while (lenr == 1024)
 	{
-		red = read(filed_from, buf, 1024);
-		check2(red, argv[1], filed_from, filed_to);
-		wrt = write(filed_to, buf, red);
-		if (wrt != red)
-			wrt = -1;
-		check3(wrt, argv[2], filed_from, filed_to);
+		lenr = read(fd_from, buf, 1024);
+		check2(lenr, argv[1], fd_from, fd_to);
+		lenw = write(fd_to, buf, lenr);
+		if (lenw != lenr)
+			lenw = -1;
+		check3(lenw, argv[2], fd_from, fd_to);
 	}
-	close_to = close(filed_to);
-	close_from = close(filed_from);
-	check4(close_to, filed_to);
-	check4(close_from, filed_from);
+	close_to = close(fd_to);
+	close_from = close(fd_from);
+	check4(close_to, fd_to);
+	check4(close_from, fd_from);
 	return (0);
 }
